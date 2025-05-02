@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias Space Explorer Interactive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Elias Space Explorer <span class="stars">✨</span></h1>
+        <p>Your interactive journey through the cosmos</p>
+    </header>
+
+    <main>
+        <!-- Section 1: Event Handling Demo -->
+        <section id="event-demo">
+            <h2>Control Panel <span class="control-status">Offline</span></h2>
+            <div class="control-board">
+                <button id="power-btn">Power On</button>
+                <div id="hover-area">Hover to scan</div>
+                <div id="key-detector">
+                    <p>Type to enter command codes</p>
+                    <input type="text" id="command-input" placeholder="Enter commands...">
+                    <p id="key-feedback">No keys detected</p>
+                </div>
+                <div id="secret-panel">Double-click for emergency protocols</div>
+            </div>
+        </section>
+
+        <!-- Section 2: Interactive Elements -->
+        <section id="interactive-elements">
+            <h2>Cosmic Gallery</h2>
+            
+            <!-- Tab Navigation -->
+            <div class="tab-container">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="planets">Planets</button>
+                    <button class="tab-btn" data-tab="stars">Stars</button>
+                    <button class="tab-btn" data-tab="galaxies">Galaxies</button>
+                </div>
+                
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="planets">
+                        <h3>Explore Planets</h3>
+                        <!-- Image Gallery/Slideshow -->
+                        <div class="gallery">
+                            <div class="gallery-container">
+                                <img src="https://img.freepik.com/free-photo/3d-surreal-mars-style-landscape_1048-9878.jpg?t=st=1746176474~exp=1746180074~hmac=684aeacc165f182e1510b50597c38b75b8162792e8cd16f4662b5e21198ebad8&w=996" alt="Mars" class="gallery-image">
+                                <img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8anVwaXRlcnxlbnwwfHwwfHx8MA%3D%3D" alt="Jupiter" class="gallery-image">
+                                <img src="https://i.pinimg.com/736x/3e/ed/03/3eed03899bfdd291450d13a059c6908a.jpg" alt="Saturn" class="gallery-image">
+                                <img src="https://i.pinimg.com/736x/b3/90/3d/b3903d8e8f99fdc3c679f9decf466c47.jpg" alt="Neptune" class="gallery-image">
+                            </div>
+                            <div class="gallery-controls">
+                                <button id="prev-btn">Previous</button>
+                                <button id="next-btn">Next</button>
+                            </div>
+                            <p class="gallery-caption">Exploring: <span id="current-planet">Mars</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="stars">
+                        <h3>Star Systems</h3>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <div class="accordion-header">Solar System</div>
+                                <div class="accordion-content">
+                                    <p>Our home star system, with 8 planets and numerous dwarf planets.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">Alpha Centauri</div>
+                                <div class="accordion-content">
+                                    <p>The closest star system to our Solar System, just 4.37 light-years away.</p>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">Sirius</div>
+                                <div class="accordion-content">
+                                    <p>The brightest star in the night sky, a binary star system.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="galaxies">
+                        <h3>Galaxy Explorer</h3>
+                        <div class="color-changer">
+                            <div id="galaxy-box">Milky Way Galaxy</div>
+                            <button id="change-galaxy">Discover New Galaxy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Form Validation -->
+        <section id="mission-signup">
+            <h2>Join the Mission</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="name">Astronaut Name*</label>
+                    <input type="text" id="name" required>
+                    <span class="validation-message" id="name-validation"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Space Email*</label>
+                    <input type="email" id="email" required>
+                    <span class="validation-message" id="email-validation"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Security Code*</label>
+                    <input type="password" id="password" required>
+                    <span class="validation-message" id="password-validation"></span>
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Password Strength: Not entered</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mission">Select Mission</label>
+                    <select id="mission">
+                        <option value="">Choose your mission</option>
+                        <option value="mars">Mars Exploration</option>
+                        <option value="moon">Lunar Base</option>
+                        <option value="iss">International Space Station</option>
+                    </select>
+                </div>
+                
+                <button type="submit" id="submit-btn">Submit Application</button>
+            </form>
+            <div id="form-response" class="hidden">Thanks for joining! Your application is being processed.</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Space Explorer Interactive | Built with JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
